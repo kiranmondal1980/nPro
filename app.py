@@ -5,7 +5,7 @@ import json
 from datetime import datetime
 
 # --- 1. APP CONFIGURATION ---
-st.set_page_config(page_title="Kaydiem Titan v12.2 | Final Platinum Architect", layout="wide", page_icon="💎")
+st.set_page_config(page_title="Kaydiem Titan v12.3 | Flawless Platinum Architect", layout="wide", page_icon="💎")
 
 st.markdown("""
     <style>
@@ -24,13 +24,13 @@ st.markdown("""
 # --- SIDEBAR: DESIGN STUDIO ---
 with st.sidebar:
     st.image("https://www.gstatic.com/images/branding/product/2x/business_profile_96dp.png", width=50)
-    st.title("Titan v12.2 Studio")
+    st.title("Titan v12.3 Studio")
     
     with st.expander("🎭 1. Layout & DNA", expanded=True):
-        layout_dna = st.selectbox("Design DNA", ["Industrial Titan", "Classic Royal", "Soft-UI", "Glass-Tech", "Corporate Elite"])
+        layout_dna = st.selectbox("Design DNA", ["Industrial Titan", "Classic Royal", "Soft-UI", "Glass-Tech", "Brutalist", "Corporate Elite"])
         p_color = st.color_picker("Primary Brand Color", "#4A0E0E")
         s_color = st.color_picker("Accent/CTA Color", "#D4AF37")
-        border_rad = st.select_slider("Corner Roundness", options=["0px", "4px", "12px", "24px", "40px", "60px"], value="40px")
+        border_rad = st.select_slider("Corner Roundness", options=["0px", "12px", "24px", "60px"], value="24px")
 
     with st.expander("✍️ 2. Typography Studio", expanded=True):
         h_font = st.selectbox("Heading Font", ["Playfair Display", "Oswald", "Montserrat", "Syncopate", "Inter"])
@@ -41,7 +41,7 @@ with st.sidebar:
     gsc_tag_input = st.text_input("GSC Verification Tag")
     st.info("Technical Authority: Kaydiem Script Lab")
 
-st.title("🏗️ Kaydiem Titan Supreme v12.2")
+st.title("🏗️ Kaydiem Titan Supreme v12.3")
 
 # --- 2. MULTI-TAB DATA COLLECTION ---
 tabs = st.tabs(["📍 Identity", "🏗️ Content & SEO", "🖼️ Photo Manager", "⚡ Live E-com", "🌟 Social Proof", "⚖️ Legal"])
@@ -87,7 +87,7 @@ with tabs[5]:
     priv_body = st.text_area("Privacy Policy Content", height=300)
     terms_body = st.text_area("Terms Content", height=300)
 
-# --- 3. THE SUPREME ENGINE V12.2 ---
+# --- 3. THE SUPREME ENGINE V12.3 ---
 
 if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
     
@@ -107,9 +107,9 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
     theme_css = f"""
     :root {{ --p: {p_color}; --s: {s_color}; --radius: {border_rad}; }}
     * {{ box-sizing: border-box; }}
-    html, body {{ margin: 0; padding: 0; width: 100%; overflow-x: hidden; position: relative; }}
-    body {{ font-family: '{b_font}', sans-serif; color: #0f172a; line-height: 1.6; background: #fff; }}
-
+    html, body {{ margin: 0; padding: 0; width: 100%; overflow-x: hidden; position: relative; scroll-behavior: smooth; }}
+    body {{ font-family: '{b_font}', sans-serif; color: #0f172a; line-height: 1.7; background: #fff; }}
+    
     /* RECTIFIED TYPOGRAPHY: FORCES WORDS TO WRAP ON MOBILE */
     h1, h2, h3 {{ 
         font-family: '{h_font}', sans-serif; 
@@ -117,31 +117,20 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
         letter-spacing: {ls}; 
         text-transform: uppercase; 
         line-height: 1.1; 
-        overflow-wrap: break-word; /* Forces long words to wrap */
-        word-break: break-word;     /* Ensures word doesn't go off-screen */
-        hyphens: auto;             /* Adds hyphens if needed */
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
     }}
     
-    /* SMALLER SCALE FOR MOBILE TITLES */
-    .hero-title {{ font-size: clamp(1.4rem, 8vw, 90px); text-shadow: 0 4px 15px rgba(0,0,0,0.3); }}
-    .section-title {{ font-size: clamp(1.5rem, 6vw, 70px); color: var(--p); }}
-
-    /* PRODUCT MODAL TITLE FIX */
-    #m-title {{ 
-        font-size: clamp(1.2rem, 6vw, 2.5rem); 
-        margin-bottom: 1rem;
-        display: block;
-        width: 100%;
-    }}
+    .hero-title {{ font-size: clamp(1.4rem, 8vw, 95px); text-shadow: 0 4px 20px rgba(0,0,0,0.4); line-height: 1; }}
+    .section-title {{ font-size: clamp(1.6rem, 6vw, 75px); color: var(--p); }}
     
-    /* RECTIFIED PROFESSIONAL BUTTONS */
-    .btn-p {{ background: var(--p); color: white !important; padding: 0.9rem 2.2rem; border-radius: var(--radius); font-weight: 900; transition: all 0.4s; display: inline-block; text-align: center; border:none; text-decoration:none; text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; cursor: pointer; }}
-    .btn-p:hover {{ transform: translateY(-2px); filter: brightness(1.2); }}
-
-    .btn-accent {{ background: var(--s); color: white !important; padding: 1.1rem 2.8rem; border-radius: var(--radius); font-weight: 900; transition: all 0.4s; display: inline-block; text-align: center; border:none; box-shadow: 0 10px 20px -5px var(--s); text-decoration:none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.1em; font-size: 12px; }}
+    .btn-p {{ background: var(--p); color: white !important; padding: 0.9rem 2.2rem; border-radius: var(--radius); font-weight: 900; transition: all 0.4s; display: inline-block; text-align: center; border:none; text-decoration:none; text-transform: uppercase; font-size: 11px; }}
+    .btn-accent {{ background: var(--s); color: white !important; padding: 1rem 2.5rem; border-radius: var(--radius); font-weight: 900; transition: all 0.4s; display: inline-block; text-align: center; border:none; box-shadow: 0 10px 20px -5px var(--s); text-decoration:none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.1em; font-size: 12px; }}
     .btn-accent:hover {{ transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 20px 40px -5px var(--s); }}
     
-    .glass-nav {{ background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.08); width: 100%; z-index: 9999; position: fixed; top: 0; left: 0; }}
+    .glass-nav {{ background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); width: 100%; z-index: 9999; position: fixed; top: 0; left: 0; }}
+    
     .hero-mask {{ 
         background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('{img_h}'); 
         background-size: cover; background-position: center; 
@@ -149,8 +138,10 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
         width: 100%; margin: 0; padding: 140px 20px 60px 20px;
     }}
     
-    .product-card {{ background: white; border-radius: var(--radius); padding: 2.5rem; border: 1px solid #f1f5f9; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); transition: 0.3s; cursor: pointer; height: 100%; }}
-    #modal {{ display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100000; padding: 1.5rem; align-items: center; justify-content: center; overflow-y: auto; }}
+    .product-card {{ background: white; border-radius: var(--radius); padding: 2rem; border: 1px solid #f1f5f9; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); transition: 0.3s; cursor: pointer; height: 100%; }}
+    
+    /* RECTIFIED MODAL ARCHITECTURE */
+    #modal {{ display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100000; padding: 1rem; align-items: center; justify-content: center; overflow-y: auto; }}
     .modal-content {{ background: white; max-width: 1100px; width: 100%; border-radius: var(--radius); overflow: hidden; position: relative; }}
     
     .legal-text {{ white-space: pre-wrap; word-wrap: break-word; font-size: 1.1rem; color: #334155; line-height: 1.9; padding: 20px 0; }}
@@ -163,45 +154,36 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
         v_tag = f'<meta name="google-site-verification" content="{gsc_tag_input}">' if (is_h and gsc_tag_input) else ""
         
         # --- RECTIFIED DYNAMIC INJECTION SCRIPT ---
+        # Note: Doubled curly braces used for literal JavaScript braces
         dynamic_script = ""
         if is_h and sheet_url:
             dynamic_script = f"""
             <script>
-             let currentProducts = [];
+            let currentProducts = [];
             async function fetchLiveData() {{
                 try {{
                     const response = await fetch('{sheet_url}');
                     const csvText = await response.text();
                     if (csvText.includes("<!DOCTYPE")) return;
                     
-                    // This splits the sheet into rows
-                    const rows = csvText.split('\\n').slice(1);
+                    const rows = csvText.split('\\n').map(row => row.split('|')).slice(1);
                     const container = document.getElementById('live-data-container');
                     container.innerHTML = "";
                     
-                    rows.forEach((line, idx) => {{
-                        if (!line.trim()) return;
-
-                        // BEGINNER FIX: This line correctly splits by comma but keeps spaces inside the name
-                        const parts = line.split(/,(?=(?:(?:[^"]*"){{2}})*[^"]*$)/);
-                        
+                    rows.forEach((parts, idx) => {{
                         if (parts.length >= 2) {{
                             const p = {{ 
-                                id: idx, 
-                                name: parts[0].replace(/"/g, "").trim(), 
-                                price: parts[1].replace(/"/g, "").trim(), 
-                                desc: (parts[2] || "").replace(/"/g, "").trim(), 
-                                img1: (parts[3] || "{img_f}").trim() 
+                                id: idx, name: parts[0].trim(), price: parts[1].trim(), desc: (parts[2] || "").trim(), 
+                                img1: (parts[3] || "{img_f}").trim(), img2: (parts[4] || "").trim(), img3: (parts[5] || "").trim() 
                             }};
                             currentProducts.push(p);
-
                             container.innerHTML += `
                             <div onclick="openProduct(${{idx}})" class="product-card flex flex-col justify-between transition-all hover:scale-[1.03]">
                                 <img src="${{p.img1}}" class="w-full h-56 object-cover mb-6 rounded-[2.5rem] bg-slate-50" onerror="this.src='{img_f}'">
                                 <div>
-                                    <h3 class="text-2xl font-black mb-2 uppercase" style="color:{p_color}">${{p.name}}</h3>
-                                    <p class="font-black text-2xl mb-4 text-s" style="color:{s_color}">${{p.price}}</p>
-                                    <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest italic underline decoration-slate-100 underline-offset-4">Learn More →</p>
+                                    <h3 class="text-2xl font-black mb-2 uppercase" style="color:var(--p)">${{p.name}}</h3>
+                                    <p class="font-black text-2xl mb-4 text-s" style="color:var(--s)">${{p.price}}</p>
+                                    <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest italic underline decoration-slate-100 underline-offset-4">Click to Open →</p>
                                 </div>
                             </div>`;
                         }}
@@ -218,7 +200,10 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
                 document.getElementById('modal').style.display = 'flex';
                 document.body.style.overflow = 'hidden';
             }}
-            function closeModal() {{ document.getElementById('modal').style.display='none'; document.body.style.overflow='auto'; }}
+            function closeModal() {{ 
+                document.getElementById('modal').style.display='none'; 
+                document.body.style.overflow='auto'; 
+            }}
             window.onload = fetchLiveData;
             </script>
             """
@@ -247,24 +232,18 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
     </nav>
     <main class="flex-grow pt-24 md:pt-0">{body_html}</main>
     
-     <div id="modal" onclick="if(event.target == this) {{ this.style.display='none'; document.body.style.overflow='auto'; }}">
+    <div id="modal" onclick="if(event.target == this) closeModal()">
         <div class="modal-content shadow-2xl animate-in zoom-in duration-300">
             <div class="grid md:grid-cols-2">
-                <!-- REDUCED PADDING ON IMAGE SECTION (p-6 to p-4) -->
                 <div class="p-4 bg-slate-50">
-                    <img id="m-img-1" class="w-full h-48 md:h-80 object-cover rounded-[1.5rem] shadow-xl">
+                    <img id="m-main-img" class="w-full h-48 md:h-80 object-cover rounded-[1.5rem] shadow-xl">
                 </div>
-                
-                <!-- REDUCED PADDING ON TEXT SECTION (p-12 to p-6) -->
                 <div class="p-6 md:p-12 flex flex-col justify-center text-left">
-                    <!-- REDUCED BOTTOM MARGINS (mb-4 to mb-2, etc.) -->
                     <h2 id="m-title" class="text-2xl md:text-4xl font-black mb-2 uppercase text-p" style="color:var(--p)"></h2>
                     <p id="m-price" class="text-xl md:text-3xl font-black mb-4 text-s" style="color:var(--s)"></p>
                     <p id="m-desc" class="text-slate-600 mb-6 leading-relaxed text-xs md:text-lg"></p>
-                    
-                    <a id="m-wa" href="#" target="_blank" class="btn-supreme w-full uppercase tracking-widest shadow-2xl py-3 md:py-4">Confirm Booking</a>
-                    
-                    <button onclick="document.getElementById('modal').style.display='none'; document.body.style.overflow='auto';" class="text-xs font-black uppercase tracking-widest opacity-30 mt-6 underline">Close Details</button>
+                    <a id="m-wa" href="#" target="_blank" class="btn-accent w-full uppercase tracking-widest shadow-2xl py-3 md:py-4">Confirm Booking</a>
+                    <button onclick="closeModal()" class="text-xs font-black uppercase tracking-widest opacity-30 mt-6 underline no-underline">Close Window</button>
                 </div>
             </div>
         </div>
@@ -272,7 +251,7 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
     <a href="https://wa.me/{wa_clean}" class="wa-float" target="_blank"><svg style="width:38px;height:38px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24m-3.53 3.16c-.13 0-.35.05-.54.26c-.19.2-.72.7-.72 1.72s.73 2.01.83 2.14c.1.13 1.44 2.19 3.48 3.07c.49.21.87.33 1.16.43c.49.16.94.13 1.29.08c.4-.06 1.21-.5 1.38-.98c.17-.48.17-.89.12-.98c-.05-.09-.18-.13-.37-.23c-.19-.1-.1.13-.1.13s-1.13-.56-1.32-.66c-.19-.1-.32-.15-.45.05c-.13.2-.51.65-.62.78c-.11.13-.23.15-.42.05c-.19-.1-.8-.3-1.53-.94c-.57-.5-1.02-1.12-1.21-1.45c-.11-.19-.01-.29.09-.38c.09-.08.19-.23.29-.34c.1-.11.13-.19.19-.32c.06-.13.03-.24-.01-.34c-.05-.1-.45-1.08-.62-1.48c-.16-.4-.36-.34-.51-.35c-.11-.01-.25-.01-.4-.01Z"/></svg></a>
 
     <footer class="bg-slate-950 text-slate-400 py-24 px-10 border-t border-slate-900">
-        <div class="max-w-[1440px] mx-auto grid md:grid-cols-3 gap-16 text-left">
+        <div class="max-w-[1440px] mx-auto grid md:grid-cols-3 gap-16">
             <div>
                 {logo_display.replace('h-10 md:h-16', 'h-8 mb-6 opacity-70')}
                 <p class="text-sm leading-relaxed mb-10 max-w-md">{biz_addr}</p>
@@ -295,7 +274,7 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
     {dynamic_script}
 </body></html>"""
 
-    # --- ENHANCED INDEX CONTENT ---
+    # --- INDEX ---
     serv_final_html = "".join([f'<div class="bg-slate-50 p-12 rounded-[2.5rem] border border-slate-100 shadow-xl hover:scale-[1.02] transition-transform"><h3 class="text-2xl font-black mb-4 uppercase text-brand" style="color:var(--p)">{s.strip()}</h3><p class="text-slate-500 text-sm leading-relaxed font-bold uppercase tracking-tight italic">Verified technical solution for {biz_name}.</p></div>' for s in biz_serv.splitlines() if s.strip()])
     t_cards = "".join([f'<div class="p-10 bg-slate-50 rounded-[3rem] border border-slate-100 italic text-xl shadow-inner mb-8" style="color:var(--p)">"{t.split("|")[1].strip()}"<br><span class="font-black not-italic text-sm block mt-6 uppercase tracking-widest text-brand" style="color:var(--p)">— {t.split("|")[0].strip()} <span class="text-emerald-500 font-black ml-2 text-xs">● Partner</span></span></div>' for t in testi_txt.splitlines() if "|" in t])
     f_cards = "".join([f'<details class="mb-6 bg-white p-6 rounded-2xl border border-slate-100 cursor-pointer shadow-sm"><summary class="font-black text-lg uppercase tracking-tight">{f.split("?")[0].strip()}?</summary><p class="mt-4 text-slate-600 leading-relaxed font-medium text-sm">{f.split("?")[1].strip()}</p></details>' for f in faq_txt.splitlines() if "?" in f])
@@ -341,5 +320,5 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
         z_f.writestr("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {prod_url}sitemap.xml")
         z_f.writestr("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{prod_url}index.html</loc></url><url><loc>{prod_url}about.html</loc></url></urlset>')
 
-    st.success("💎 TITAN SUPREME v11.2 FINAL PLATINUM DEPLOYED. Fixed all errors.")
-    st.download_button("📥 DOWNLOAD ENTERPRISE BIZ PACKAGE", z_b.getvalue(), f"{biz_name.lower().replace(' ', '_')}_v11_2.zip")
+    st.success("💎 TITAN SUPREME v12.3 FINAL PLATINUM DEPLOYED. Fixed Modal & Variable Names.")
+    st.download_button("📥 DOWNLOAD COMPLETE BIZ PACKAGE", z_b.getvalue(), f"{biz_name.lower().replace(' ', '_')}_v12_3.zip")
