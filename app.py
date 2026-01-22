@@ -5,7 +5,7 @@ import json
 from datetime import datetime
 
 # --- 1. APP CONFIGURATION ---
-st.set_page_config(page_title="Kaydiem Titan v12.4 | Platinum Architect", layout="wide", page_icon="💎")
+st.set_page_config(page_title="Kaydiem Titan v12.5 | CORS-Aware Architect", layout="wide", page_icon="💎")
 
 st.markdown("""
     <style>
@@ -17,14 +17,13 @@ st.markdown("""
         color: white; font-weight: 900; border: none; font-size: 1.4rem;
         box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s;
     }
-    .stButton>button:hover { transform: translateY(-2px); filter: brightness(1.2); }
     </style>
     """, unsafe_allow_html=True)
 
 # --- SIDEBAR: DESIGN STUDIO ---
 with st.sidebar:
     st.image("https://www.gstatic.com/images/branding/product/2x/business_profile_96dp.png", width=50)
-    st.title("Titan v12.4 Studio")
+    st.title("Titan v12.5 Studio")
     
     with st.expander("🎭 1. Layout & DNA", expanded=True):
         layout_dna = st.selectbox("Design DNA", ["Industrial Titan", "Classic Royal", "Soft-UI", "Glass-Tech", "Brutalist", "Corporate Elite"])
@@ -39,9 +38,9 @@ with st.sidebar:
         ls = st.select_slider("Letter Spacing", options=["-0.05em", "-0.02em", "0em", "0.05em", "0.1em"], value="0.05em")
 
     gsc_tag = st.text_input("GSC Verification Tag")
-    st.info("Technical Authority: Kaydiem Script Lab")
+    st.info("Built by Kaydiem Script Lab")
 
-st.title("🏗️ Kaydiem Titan Supreme v12.4")
+st.title("🏗️ Kaydiem Titan Supreme v12.5")
 
 # --- 2. MULTI-TAB DATA COLLECTION ---
 tabs = st.tabs(["📍 Identity", "🏗️ Content & SEO", "🖼️ Photo Manager", "⚡ Live E-com", "🌟 Social Proof", "⚖️ Legal"])
@@ -49,34 +48,34 @@ tabs = st.tabs(["📍 Identity", "🏗️ Content & SEO", "🖼️ Photo Manager
 with tabs[0]:
     c1, c2 = st.columns(2)
     with c1:
-        biz_name = st.text_input("Business Name (NAP)", "Red Hippo (The Planners)")
+        biz_name = st.text_input("Business Name", "Red Hippo (The Planners)")
         biz_phone = st.text_input("Verified Phone", "+91 84540 02711")
         biz_email = st.text_input("Business Email", "events@redhippoplanners.in")
     with c2:
         biz_cat = st.text_input("Category", "Luxury Wedding Planner")
         biz_hours = st.text_input("Hours", "Mon-Sun: 10:00 - 19:00")
         prod_url = st.text_input("Production URL", "https://kani201012.github.io/site/")
-    biz_logo = st.text_input("Logo Image URL")
-    biz_addr = st.text_area("Full Maps Physical Address")
-    biz_areas = st.text_area("Service Areas (Comma separated)", "Vasant Kunj, Chhatarpur, South Delhi")
-    map_iframe = st.text_area("Map Embed HTML Code (<iframe>)")
+    biz_logo = st.text_input("Logo URL")
+    biz_addr = st.text_area("Full Maps Address")
+    biz_areas = st.text_area("Service Areas", "Vasant Kunj, Chhatarpur, South Delhi")
+    map_iframe = st.text_area("Map Embed HTML Code")
 
 with tabs[1]:
     hero_h = st.text_input("Hero Headline", "Crafting Dream Weddings: New Delhi's Premier Luxury Decorators")
     seo_d = st.text_input("Meta Description (160 Chars)")
     biz_key = st.text_input("SEO Keywords")
     biz_serv = st.text_area("Services Listing (One per line)")
-    about_txt = st.text_area("Our Story (800+ Words for E-E-A-T)", height=250)
+    about_txt = st.text_area("Our Story (800+ Words)", height=250)
 
 with tabs[2]:
-    st.header("📸 Premium Asset Manager")
+    st.header("📸 Asset Manager")
     custom_hero = st.text_input("Hero Background URL")
     custom_feat = st.text_input("Feature Image URL")
     custom_gall = st.text_input("About Image URL")
 
 with tabs[3]:
-    st.header("🛒 Live E-commerce Data")
-    st.warning("IMPORTANT: Your Google Sheet must use Pipe (|) separator.")
+    st.header("🛒 Live Showroom (Google Sheets)")
+    st.warning("MANDATORY: Use the Pipe (|) separator in your sheet. Format: Name | Price | Description | Img1 | Img2 | Img3")
     sheet_url = st.text_input("Published CSV Link")
 
 with tabs[4]:
@@ -84,27 +83,25 @@ with tabs[4]:
     faq_txt = st.text_area("FAQ (Question? ? Answer)")
 
 with tabs[5]:
-    st.header("⚖️ Legal Compliance Hub")
+    st.header("⚖️ Legal Hub")
     priv_body = st.text_area("Privacy Policy Content", height=300)
     terms_body = st.text_area("Terms Content", height=300)
 
-# --- 3. THE SUPREME ENGINE V12.4 ---
+# --- 3. THE SUPREME ENGINE V12.5 ---
 
-if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
+if st.button("🚀 DEPLOY 100% MARKET-DOMINATING ASSET"):
     
-    # 3.1 Setup Image logic
+    # Setup Image logic
     img_h = custom_hero if custom_hero else "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1600"
     img_f = custom_feat if custom_feat else "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800"
     img_g = custom_gall if custom_gall else "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=1600"
 
-    # 3.2 Global Logic Variables
-    logo_display = f'<img src="{biz_logo}" alt="{biz_name}" class="h-10 md:h-16 w-auto object-contain">' if biz_logo else f'<span class="text-xl md:text-3xl font-black tracking-tighter uppercase" style="color:var(--p)">{biz_name}</span>'
+    logo_display = f'<img src="{biz_logo}" alt="{biz_name}" class="h-10 md:h-16 w-auto object-contain mx-auto md:mx-0">' if biz_logo else f'<span class="text-xl md:text-3xl font-black tracking-tighter uppercase" style="color:var(--p)">{biz_name}</span>'
     a_list = [a.strip() for a in biz_areas.split(",")]
     s_areas_json = json.dumps(a_list)
     wa_clean = biz_phone.replace(" ", "").replace("+", "")
     wa_base_url = f"https://wa.me/{wa_clean}?text="
 
-    # 3.3 The CSS Theme
     theme_css = f"""
     :root {{ --p: {p_color}; --s: {s_color}; --radius: {border_rad}; }}
     * {{ box-sizing: border-box; }}
@@ -112,15 +109,14 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
     body {{ font-family: '{b_font}', sans-serif; color: #0f172a; line-height: 1.7; background: #fff; }}
     h1, h2, h3 {{ font-family: '{h_font}', sans-serif; font-weight: {h_weight}; letter-spacing: {ls}; text-transform: uppercase; line-height: 1.1; overflow-wrap: break-word; }}
     
-    .hero-title {{ font-size: clamp(1.6rem, 8vw, 95px); text-shadow: 0 4px 20px rgba(0,0,0,0.4); line-height: 1; }}
+    .hero-title {{ font-size: clamp(1.4rem, 8vw, 95px); text-shadow: 0 4px 20px rgba(0,0,0,0.4); line-height: 1; }}
     .section-title {{ font-size: clamp(1.8rem, 6vw, 75px); color: var(--p); }}
     
-    /* RECTIFIED BUTTONS */
     .btn-p {{ background: var(--p); color: white !important; padding: 0.9rem 2.2rem; border-radius: var(--radius); font-weight: 900; transition: all 0.4s; display: inline-block; text-align: center; border:none; text-decoration:none; text-transform: uppercase; font-size: 11px; }}
-    .btn-accent {{ background: var(--s); color: white !important; padding: 1.1rem 2.8rem; border-radius: var(--radius); font-weight: 900; transition: all 0.4s; display: inline-block; text-align: center; border:none; box-shadow: 0 10px 20px -5px var(--s); text-decoration:none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.1em; font-size: 12px; }}
+    .btn-accent {{ background: var(--s); color: white !important; padding: 1.1rem 2.8rem; border-radius: var(--radius); font-weight: 900; transition: all 0.4s; display: inline-block; text-align: center; border:none; box-shadow: 0 10px 20px -5px var(--s); text-decoration:none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.15em; font-size: 12px; }}
     .btn-accent:hover {{ transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 20px 40px -5px var(--s); }}
     
-    .glass-nav {{ background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); width: 100%; z-index: 9999; position: fixed; top: 0; left: 0; }}
+    .glass-nav {{ background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.08); width: 100%; z-index: 9999; position: fixed; top: 0; left: 0; }}
     .hero-mask {{ 
         background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('{img_h}'); 
         background-size: cover; background-position: center; 
@@ -135,21 +131,28 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
     .legal-text {{ white-space: pre-wrap; word-wrap: break-word; font-size: 1.1rem; color: #334155; line-height: 1.9; padding: 20px 0; }}
     .legal-bold-title {{ font-weight: 900; font-size: clamp(2.2rem, 6vw, 4.5rem); color: var(--p); margin-bottom: 2rem; text-transform: uppercase; line-height: 1; }}
     .wa-float {{ position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50px; display: flex; align-items: center; justify-content: center; z-index: 99999; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: 0.3s ease; text-decoration:none; animation: pulse 2s infinite; }}
-    @keyframes pulse {{ 0% {{ box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }} 70% {{ box-shadow: 0 0 0 15px rgba(37,211,102,0); }} 100% {{ box-shadow: 0 0 0 0 rgba(37,211,102,0); }} }}
+    @keyframes pulse {{ 0% {{ box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }} 70% {{ box-shadow: 0 0 0 15px rgba(37,211_102,0); }} 100% {{ box-shadow: 0 0 0 0 rgba(37,211,102,0); }} }}
     """
 
-    def get_layout(page_title, page_desc, content_body, is_home=False):
-        v_tag = f'<meta name="google-site-verification" content="{gsc_tag}">' if (is_home and gsc_tag) else ""
+    def get_layout(title_tag, desc_tag, body_html, is_h=False):
+        v_tag = f'<meta name="google-site-verification" content="{gsc_tag}">' if (is_h and gsc_tag) else ""
         
-        # --- RECTIFIED DYNAMIC SCRIPT ---
+        # --- DYNAMIC INJECTION SCRIPT v12.5 (CORS-Aware) ---
         dynamic_script = ""
-        if is_home and sheet_url:
+        if is_h and sheet_url:
             dynamic_script = f"""
             <script>
             let currentProducts = [];
             async function fetchLiveData() {{
                 try {{
                     const response = await fetch('{sheet_url}');
+                    
+                    // CORS DETECTOR
+                    if (location.protocol === 'file:') {{
+                        document.getElementById('live-data-container').innerHTML = "<div class='col-span-full p-20 text-center bg-blue-50 text-blue-800 rounded-3xl border border-blue-100 font-bold uppercase'>SECURITY NOTICE: Browsers block data on local files. To see products, upload this folder to GitHub or Netlify.</div>";
+                        return;
+                    }}
+
                     const csvText = await response.text();
                     if (csvText.includes("<!DOCTYPE")) return;
                     
@@ -170,19 +173,22 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
                                 <div>
                                     <h3 class="text-2xl font-black mb-2 uppercase" style="color:var(--p)">${{p.name}}</h3>
                                     <p class="font-black text-2xl mb-4 text-s" style="color:var(--s)">${{p.price}}</p>
-                                    <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest italic underline decoration-slate-100 underline-offset-4">Learn More →</p>
+                                    <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest italic underline decoration-slate-100 underline-offset-4 tracking-[0.2em]">View Details →</p>
                                 </div>
                             </div>`;
                         }}
                     }});
-                }} catch (e) {{ console.log("Fail"); }}
+                }} catch (e) {{ 
+                    console.log("CORS block or link fail");
+                }}
             }}
+            function swapImage(src) {{ document.getElementById('m-main-img').src = src; }}
             function openProduct(id) {{
                 const p = currentProducts[id];
                 document.getElementById('m-title').innerText = p.name;
                 document.getElementById('m-price').innerText = p.price;
                 document.getElementById('m-desc').innerText = p.desc;
-                document.getElementById('m-img-1').src = p.img1;
+                document.getElementById('m-main-img').src = p.img1;
                 document.getElementById('m-wa').href = "{wa_base_url}" + encodeURIComponent("I am interested in " + p.name + " (" + p.price + ")");
                 document.getElementById('modal').style.display = 'flex';
                 document.body.style.overflow = 'hidden';
@@ -197,8 +203,8 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     {v_tag}
-    <title>{page_title} | {biz_name}</title>
-    <meta name="description" content="{page_desc}"><meta name="keywords" content="{biz_key}">
+    <title>{title_tag} | {biz_name}</title>
+    <meta name="description" content="{desc_tag}"><meta name="keywords" content="{biz_key}">
     <link rel="canonical" href="{prod_url}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family={h_font.replace(' ', '+')}:wght@700;900&family={b_font.replace(' ', '+')}:wght@400;700&display=swap" rel="stylesheet">
@@ -207,9 +213,9 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
     {{ "@context": "https://schema.org", "@type": "LocalBusiness", "name": "{biz_name}", "address": {{ "@type": "PostalAddress", "streetAddress": "{biz_addr}" }}, "telephone": "{biz_phone}", "areaServed": {s_areas_json} }}
     </script>
 </head>
-<body class="bg-white">
+<body class="bg-white flex flex-col min-h-screen">
     <nav class="glass-nav p-4 md:p-6 shadow-sm">
-        <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+        <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center">
             <a href="index.html" class="no-underline">{logo_display}</a>
             <div class="flex items-center space-x-6 md:space-x-12 text-[10px] md:text-xs font-black uppercase tracking-widest text-slate-600">
                 <a href="index.html" class="hover:text-blue-600 no-underline">Home</a> <a href="about.html" class="hover:text-blue-600 no-underline">About</a> <a href="contact.html" class="hover:text-blue-600 no-underline">Contact</a>
@@ -217,13 +223,13 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
             </div>
         </div>
     </nav>
-    <main class="flex-grow pt-24 md:pt-0">{content_body}</main>
+    <main class="flex-grow pt-24 md:pt-0">{body_html}</main>
     
     <div id="modal" onclick="if(event.target == this) closeModal()">
         <div class="modal-content shadow-2xl animate-in zoom-in duration-300">
             <div class="grid md:grid-cols-2">
                 <div class="p-6 bg-slate-50 flex flex-col gap-6">
-                    <img id="m-img-1" class="w-full h-96 object-cover rounded-[2.5rem] shadow-xl border-4 border-white">
+                    <img id="m-main-img" class="w-full h-96 object-cover rounded-[2.5rem] shadow-xl border-4 border-white transition-all duration-500">
                 </div>
                 <div class="p-12 flex flex-col justify-center text-left">
                     <h2 id="m-title" class="text-4xl font-black mb-4 uppercase text-p" style="color:var(--p)"></h2>
@@ -300,12 +306,12 @@ if st.button("🚀 DEPLOY 100% STABLE PLATINUM ASSET"):
     with zipfile.ZipFile(z_b, "a", zipfile.ZIP_DEFLATED, False) as z_f:
         z_f.writestr("index.html", get_layout("Home", seo_d, idx_content, True))
         z_f.writestr("about.html", get_layout("About", "History", f"<section class='max-w-7xl mx-auto py-32 px-6'><h1 class='legal-bold-title uppercase tracking-tighter text-brand' style='color:var(--p)'>About Our Heritage</h1><div class='text-xl md:text-2xl leading-relaxed text-slate-700 legal-text'>{about_txt}</div><img src='{img_g}' class='mt-20 w-full h-[600px] object-cover shadow-2xl' style='border-radius: var(--radius)'></section>"))
-        z_f.writestr("contact.html", get_layout("Contact", "Location", f"<section class='max-w-[1440px] mx-auto py-32 px-6 text-center'><h1 class='legal-bold-title uppercase tracking-tighter text-brand' style='color:var(--p)'>Technical Hub</h1><div class='grid md:grid-cols-2 gap-16 text-left'><div class='bg-slate-950 p-12 md:p-24 text-white' style='border-radius: var(--radius)'><p class='text-4xl font-black mb-8 text-white'>{biz_phone}</p><p class='text-2xl mb-12 opacity-80'>{biz_addr}</p><a href='tel:{biz_phone}' class='btn-accent w-full no-underline uppercase tracking-widest font-black'>Book Consultation</a></div><div class='rounded-[3rem] overflow-hidden border shadow-2xl bg-slate-100' style='min-height:300px'>{map_iframe}</div></div></section>"))
+        z_f.writestr("contact.html", get_layout("Contact", "Location", f"<section class='max-w-[1440px] mx-auto py-32 px-6 text-center'><h1 class='legal-bold-title uppercase tracking-tighter text-brand' style='color:var(--p)'>Technical Hub</h1><div class='grid md:grid-cols-2 gap-16 text-left'><div class='bg-slate-950 p-12 md:p-24 text-white' style='border-radius: var(--radius)'><p class='text-4xl font-black mb-8 text-white'>{biz_phone}</p><p class='text-2xl mb-12 opacity-80'>{biz_addr}</p><a href='tel:{biz_phone}' class='btn-accent w-full no-underline uppercase tracking-widest font-black'>Book Consultation</a></div><div class='rounded-[3rem] overflow-hidden border shadow-2xl bg-slate-100' style='min-height:350px'>{map_iframe}</div></div></section>"))
         z_f.writestr("privacy.html", get_layout("Privacy", "Legal", f"<div class='max-w-4xl mx-auto py-32 px-10'><h1 class='legal-bold-title uppercase tracking-tighter text-brand' style='color:var(--p)'>Privacy Policy</h1><div class='text-lg legal-text'>{priv_body}</div></div>"))
         z_f.writestr("terms.html", get_layout("Terms", "Legal", f"<div class='max-w-4xl mx-auto py-32 px-10'><h1 class='legal-bold-title uppercase tracking-tighter text-brand' style='color:var(--p)'>Terms & Conditions</h1><div class='text-lg legal-text'>{terms_body}</div></div>"))
         z_f.writestr("404.html", get_layout("404", "Not Found", "<div class='py-64 text-center'><h1 class='text-[120px] font-black uppercase text-slate-200 tracking-widest'>404</h1></div>"))
         z_f.writestr("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {prod_url}sitemap.xml")
         z_f.writestr("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{prod_url}index.html</loc></url><url><loc>{prod_url}about.html</loc></url></urlset>')
 
-    st.success("💎 TITAN SUPREME v12.4 FINAL PLATINUM DEPLOYED. Fixed all errors.")
-    st.download_button("📥 DOWNLOAD COMPLETE BIZ PACKAGE", z_b.getvalue(), f"{biz_name.lower().replace(' ', '_')}_v12_4.zip")
+    st.success("💎 TITAN SUPREME v12.5 FINAL PLATINUM DEPLOYED. Local testing security notice added.")
+    st.download_button("📥 DOWNLOAD COMPLETE BIZ PACKAGE", z_b.getvalue(), f"{biz_name.lower().replace(' ', '_')}_v12_5.zip")
